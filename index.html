@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reaction Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Reaction Timer</h1>
+    </header>
+
+    <main>
+      <div id="box" class="state-idle" role="button" tabindex="0" aria-label="Reaction box">
+        <p id="box-message">Click to start</p>
+      </div>
+
+      <section id="stats" aria-label="Stats">
+        <p id="last-time"></p>
+        <p id="personal-best"></p>
+        <ul id="history" aria-label="Last 5 attempts"></ul>
+      </section>
+    </main>
+  </body>
+</html>

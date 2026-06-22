@@ -1,0 +1,162 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --text: #e0e0e0;
+  --text-muted: #888;
+  --badge-bg: #2a2a3e;
+
+  --color-idle: #4a4a5a;
+  --color-waiting: #c0392b;
+  --color-go: #27ae60;
+  --color-result: #2980b9;
+  --color-early: #e67e22;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+header {
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 1rem 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── Box ── */
+
+#box {
+  width: min(280px, 80vw);
+  height: min(280px, 80vw);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 0.12s ease, transform 0.08s ease;
+  outline: none;
+}
+
+#box:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+#box:active {
+  transform: scale(0.97);
+}
+
+#box-message {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+/* ── State colours ── */
+
+.state-idle {
+  background-color: var(--color-idle);
+}
+
+.state-waiting {
+  background-color: var(--color-waiting);
+}
+
+.state-go {
+  background-color: var(--color-go);
+}
+
+.state-result {
+  background-color: var(--color-result);
+}
+
+.state-early {
+  background-color: var(--color-early);
+}
+
+/* ── Stats ── */
+
+#stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 5rem;
+}
+
+#last-time {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  min-height: 1.4rem;
+}
+
+#personal-best {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-height: 1.2rem;
+}
+
+/* ── History badges ── */
+
+#history {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+#history li {
+  background-color: var(--badge-bg);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+#history li:first-child {
+  color: var(--text);
+  background-color: #3a3a54;
+}
